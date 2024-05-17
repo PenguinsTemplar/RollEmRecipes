@@ -1,6 +1,7 @@
 //this file is intended to generate the HTML elements for the cards that will be displayed on the main page.  it should iterate through the recipe.js
 //file to get the text and images for each recipe.  it should also include the event listeners for the icons on the bottom bar of each card.
 //the ingredients are a nested object in the recipe object.  they have to be handled differently than the other sections.
+//poking this to see about synching it.
 
 function showRecipeSection(sectionName, index, recipe = mainDish) {
   const displayChange = document.querySelector('.cardContainer').children[index].querySelector('.textInformation');
