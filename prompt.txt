@@ -1,0 +1,128 @@
+Prompt
+
+I'm writing a recipe website that helps track recipes in a JS array in this format:
+
+let mainDish = [
+    {
+        title : 'Scrambled Eggs',
+        imageSrc:  'Assets\/ScrambledEggs.png',
+        description : 'How to make fluffy eggs',
+        ingredients: [
+            {amount: '2',
+            ingredient: 'eggs'},
+            {amount: '1 tbs',
+            ingredient: 'butter'}
+            {amount: '1/4 cup',
+            ingredient: 'milk'
+            }
+        ],
+        instructions: 'whisk eggs and liquid together.  liquid will evaporate and create airier eggs place a sauce pan on the burner at medium low heat.  Melt the butter.  add eggs to the pan and whisk intermetantly, removing from heat occasionally to keep from cooking too fast.  remove from heat when curds form, while they\'re still glossy',
+        category:'Entree'
+    },
+{
+    title : 'Cottage Loaf',
+    imageSrc:  'Assets\/cottageLoaf.png',
+    description : 'Loaf of a Cottage',
+    ingredients: [
+        {amount: '150 g',
+        ingredient: 'sourdough starter'},
+        {amount: '500 g',
+        ingredient: 'bread flour'},
+        
+        {amount: '10 g',
+        ingredient: 'salt'}
+        {amount: '25 g',
+        ingredient: 'oil'
+        }
+    ],
+    instructions: 'put everything together in a mixer and mix for 5 minutes on medium speed.  let rise for 2 hours.  shape into a loaf and let rise for another hour.  bake at 450 for 30 minutes',
+    category:'Side'
+},
+{
+    title : 'Grilled Avacado Carrots',
+    imageSrc:    'Assets\/GrilledCarrots.png',
+    description : 'Delightful Vegetable for Summer Grilling',
+    ingredients : [{amount: '4',
+        ingredient: 'carrots'},
+        {amount: '1',
+        ingredient: 'avacado'},
+        {amount: '10 g',
+        ingredient: 'diced mint'},
+        {amount: '1 cup',
+        ingredient: 'cup Maple Syrup'}],
+    instructions: 'rub carrots in olive oil salt and pepper to taste.  grill for 12 minutes, flipping half way.  Mix with min, maple and sliced avacado',
+    category:'Vegetable'
+}
+]
+
+I need to write a js function that will take the mainDish array and load it into the first three cards on the page.  the cards have the classes Entree, Side, and Vegetable.  The recipe category determines wich card the details go on.  The cards have the following structure:
+
+<div class="imageContainer">
+            <div class="card entree">
+                <h2 id="cardTitle1">Recipe Title</h2>
+                    <img src="./assets/ChickenAndWaffles.png" alt="Recipe Image 1">
+                <p class="textInformation">What is Lorem Ipsum?
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    
+                    Why do we use it?
+                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                    
+                    </p>
+                <div class="bottomBar">
+                    
+                    <i class="material-symbols-outlined ingredients">Checklist</i>
+                    <i class="material-symbols-outlined">Turn_Right</i>
+                    <i class="material-symbols-outlined" >Timer</i>
+                </div>
+                <div class="cardIcon">
+                    <i id="rollCard1" class="material-symbols-outlined ">deployed_code</i>
+                    <i id="lockCard1" class="material-symbols-outlined ">Lock</i>
+                    <i id="loveCard1" class="material-symbols-outlined ">Favorite</i>
+                </div>
+                
+            </div>
+            <div class="card side">
+                <h2 id="cardTitle2">Recipe Title</h2>
+                <img src="./assets/GrilledCarrots.png" alt="Recipe Image 1">
+                <p class="textInformation">What is Lorem Ipsum?
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    
+                    Why do we use it?
+                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                    
+                </p>
+                <div class="bottomBar">
+                    
+                    <i class="material-symbols-outlined ingredients">Checklist</i>
+                    <i class="material-symbols-outlined">Turn_Right</i>
+                    <i class="material-symbols-outlined" >Timer</i>
+                </div>
+                <div class="cardIcon">
+                    <i id="rollCard3" class="material-symbols-outlined ">deployed_code</i>             
+                    <i id="lockCard2" class="material-symbols-outlined ">Lock</i>
+                    <i id="loveCard2" class="material-symbols-outlined ">Favorite</i>
+                </div>
+            </div>
+            <div class="card vegetable">
+                <h2 id="cardTitle3">Recipe Title</h2>
+                <img src="./assets/ColorfulSalad.png" alt="Recipe Image 1">
+                <p class="textInformation">What is Lorem Ipsum?
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    
+                    Why do we use it?
+                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                    
+                </p>
+                <div class="bottomBar">
+                    
+                    <i class="material-symbols-outlined ingredients">Checklist</i>
+                    <i class="material-symbols-outlined">Turn_Right</i>
+                    <i class="material-symbols-outlined" >Timer</i>
+                </div>
+                <div class="cardIcon">
+                    <i id="rollCard3" class="material-symbols-outlined ">deployed_code</i>
+                    <i id="lockCard3" class="material-symbols-outlined ">Lock</i>
+                    <i id="loveCard3" class="material-symbols-outlined ">Favorite</i>
+                </div>
+            </div>
+          </div>

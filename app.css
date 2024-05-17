@@ -1,0 +1,193 @@
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* Body background */
+body {
+  background-image: url("assets/honey-rose-lavendar-icecream.jpg");
+  background-color: #f0edb5;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left;  
+}
+
+.container{ 
+  box-shadow: 3px 3px 5px 0px rgba(68, 1, 1, 0.5);
+  height: 100vh;
+  display:flex;
+  flex-direction: column;
+  
+}
+
+.topBar{
+  text-align: center;
+  color: #ddd;
+  background-color: rgba(230, 143, 12, 0.5);
+  backdrop-filter: blur(5px);
+  box-shadow: 3px 3px 5px 0px rgba(68, 1, 1, 0.5);
+  padding: .75em;
+  text-shadow: 5px 5px 5px rgba(68, 1, 1, 0.5);
+}
+
+li i:hover, li a:hover, .cardIcon i:hover, .bottomBar i:hover {  /* Combined hover selector .  I think I still want labels in desktop style */
+  background-color: rgba(209, 37, 24, 0.5);
+  color: black;
+  transform: scale(1.3);
+  transition: 0.5s;
+}
+
+
+.cardContainer {
+  display: flex;
+  position: relative; /* Allows absolute positioning for text overlay */
+  width: 100%; /* Fills horizontal space */
+  height: calc(100vh - 50px); /* Adjust height based on topBar height */
+  background-color: #f0edb5; /* Optional background for visibility */
+  padding: 10px;
+}
+.card{
+  display: flex;
+  flex-direction: column;
+  min-width: 15rem;
+  max-width: 25rem;
+  border-radius: 25px;
+  margin: 1em;
+  padding: .5em;
+  background-color: rgba(230, 143, 12, 0.5);
+  backdrop-filter: blur(10px);
+  box-shadow: 3px 3px 5px 0px rgba(68, 1, 1, 0.5);
+  position: relative;
+  align-items: center;
+}
+.card h2{
+  position: absolute;
+  text-align: center;
+  font-size: 1.5em;
+  margin: 0.5em;
+  color: rgb(0, 0, 0);
+  text-shadow:
+  -1px -1px 0 #e4c5c5,
+  1px -1px 0 #e4c5c5,
+  -1px 1px 0 #e4c5c5,
+  1px 1px 0 #e4c5c5;
+}
+.cardContainer img {
+  width: 100%; /* Fills s width */
+  height: 100%; /* Fills container height */
+  object-fit:cover; /* Scales image to fill container */
+  border-radius: 25px;
+  border: 1px solid #ddd; /* Optional border for visibility */
+  }
+
+.textInformation{
+  display: none;
+  position: absolute;
+  font-size: 1.5rem;
+  top: 55px;
+  left: .6rem;
+  width: 95%;
+  height: 83.2%;
+  background:linear-gradient(rgba(230, 143, 12, 0.1), rgba(230, 143, 12, 0.4));
+  color: rgb(241, 237, 237);
+  padding: 1em;
+  text-shadow:
+  -1px -1px 0 #040404,
+  1px -1px 0 #836464,
+  -1px 1px 0 #0c0c0c,
+  1px 1px 0 #000000;
+  border-radius: 25px;
+}
+
+
+.showText{
+  display: block;
+  transition:cubic-bezier(0.445, 0.05, 0.55, 0.95) 1s;
+  animation: opacity .5s;
+}
+
+
+
+@keyframes opacity{
+  0%{
+    opacity: 0;
+  }
+  25%{
+    opacity: 0.2;
+  }
+  50%{
+    opacity: 0.4;
+  }
+  75%{
+    opacity: 0.6;
+  }
+  100%{
+    opacity: 0.8;
+  }
+}
+
+@keyframes opacity-out{
+  0%{
+    opacity: 0.8;
+  }
+  25%{
+    opacity: 0.6;
+  }
+  50%{
+    opacity: 0.4;
+  }
+  75%{
+    opacity: 0.2;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+/* This section shows the hovered card with a blue underline under the text */
+.card h2::after{
+  content: "";
+  position: absolute;
+  height: 3px;
+  background-color: rgb(117, 201, 251);
+  width: 109%;
+  height: 3px;
+  left: 0;
+  bottom:0;
+  transform: scaleX(0);
+
+}
+
+.card:hover h2::after{
+  transform: scaleX(1);
+
+}
+
+
+/* These are the icons to attach the functions on the bottomBar and the cardIcon */
+.bottomBar i{
+  padding: .5em .5em .5em .5em;
+  cursor: pointer;
+  text-decoration: none;
+  color:rgb(230, 157, 176);
+  text-shadow:
+  -1px -1px 0 #000000,
+  1px -1px 0 #000000,
+  -1px 1px 0 #000000,
+  1px 1px 0 #000000;  
+
+}
+.cardIcon i{
+  padding: .5em .5em .5em .5em;
+  cursor:pointer;
+  text-decoration: none;
+  color:rgb(117, 201, 251);
+  text-shadow:
+  -1px -1px 0 #000000,
+  1px -1px 0 #000000,
+  -1px 1px 0 #000000,
+  1px 1px 0 #000000;
+}
