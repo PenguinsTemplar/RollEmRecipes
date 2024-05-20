@@ -19,7 +19,7 @@ body {
   box-shadow: 3px 3px 5px 0px rgba(68, 1, 1, 0.4);
   height: 100vh;
   display:flex;
-  flex-direction: column;
+  flex-direction: column;;
   
 }
 
@@ -31,6 +31,10 @@ body {
   box-shadow: 3px 3px 5px 0px rgba(68, 1, 1, 0.5);
   padding: .75em;
   text-shadow: 5px 5px 5px rgba(68, 1, 1, 0.5);
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  justify-content: space-between;
 }
 
 li i:hover, li a:hover, .cardIcon i:hover, .bottomBar i:hover {  /* Combined hover selector .  I think I still want labels in desktop style */
@@ -47,7 +51,7 @@ li i:hover, li a:hover, .cardIcon i:hover, .bottomBar i:hover {  /* Combined hov
   width: 100%; /* Fills horizontal space */
   height: calc(100vh - 50px); /* Adjust height based on topBar height */
   background-color: #f0edb5; /* Optional background for visibility */
-  padding: 10px;
+  padding: 10px 50px 50px 50px; /* Optional padding for visibility */  justify-content: space-between;
 }
 .card{
   display: flex;
