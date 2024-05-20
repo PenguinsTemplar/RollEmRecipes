@@ -35,7 +35,7 @@ let mainDish = [
 },
 {
     title : 'Grilled Avacado Carrots',
-    imageSrc:    './Assets\/GrilledCarrots.png',
+    imageSrc:    '.\/Assets\/GrilledCarrots.png',
     description : 'Delightful Vegetable for Summer Grilling',
     ingredients : [{amount: '4',
         ingredient: 'carrots'},
@@ -54,7 +54,7 @@ let mainDish = [
 let recipes = [
     {
         title : 'Scrambled Eggs',
-        imageSrc:  'Assets\/ScrambledEggs.png',
+        imageSrc:  '.\/Assets\/ScrambledEggs.png',
         description : 'How to make fluffy eggs',
         ingredients: [
             {amount: '2', ingredient: 'eggs'},
@@ -66,7 +66,7 @@ let recipes = [
     },
     {
         title : 'Cottage Loaf',
-        imageSrc:  'Assets\/cottageLoaf.png',
+        imageSrc:  '.\/Assets\/cottageLoaf.png',
         description : 'Loaf of a Cottage',
         ingredients: [
             {amount: '150 g',ingredient: 'sourdough starter'},
