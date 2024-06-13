@@ -4,25 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@44,200,0,0" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="./app.css">
+    <link rel="stylesheet" href="https://unpkg.com/jasmine-core@4.1.0/lib/jasmine-core/jasmine.css" />
+    <link rel="stylesheet" href="./app.css">   
     <title>Roll 'Em Recipes</title>
+
+</head>
 </head>
 <body>
     <div class="container">
         <nav class="navBar topBar">
-            <li><i class='material-symbols-outlined'>deployed_code</i></li>
+            <li><a href="./index.html" class='material-symbols-outlined'>Menu</a></li>
             <li><h1>Roll 'Em Recipes</h1></li>
             <li><input id="searchInput" type="text"><i class="material-symbols-outlined">Search</i></li>
         </nav>
-        
+        <div class="recipe-list"></div>
         <div class="cardContainer">
             
     </div>
+    <div>
+
+    </div>
+
+    <!-- Scripts -->
     <script src="recipes.js"></script>
     <script src="app.js"></script>
     <script src="card.js"></script>
+    
+    <!-- Jasmine scripts -->
+<script src="https://unpkg.com/jasmine-core@4.1.0/lib/jasmine-core/jasmine.js"></script>
+<script src="https://unpkg.com/jasmine-core@4.1.0/lib/jasmine-core/jasmine-html.js"></script>
+<script src="https://unpkg.com/jasmine-core@4.1.0/lib/jasmine-core/boot0.js"></script>
+<script src="https://unpkg.com/jasmine-core@4.1.0/lib/jasmine-core/boot1.js"></script>
+<!-- include your JS & test file -->
+<script src="card.test.js"></script>
+
+
 </body>
 </html>  

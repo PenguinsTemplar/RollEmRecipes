@@ -5,8 +5,6 @@
   box-sizing: border-box;
 }
 
-
-/* Body background */
 body {
   background-image: url("assets/honey-rose-lavendar-icecream.jpg");
   background-color: #f0edb5;
@@ -46,6 +44,10 @@ body {
   height: 30px;
   border-radius: 25px;
 
+}
+
+li a{
+  text-decoration: none;
 }
 
 li i:hover, li a:hover, .cardIcon i:hover, .bottomBar i:hover {  /* Combined hover selector .  I think I still want labels in desktop style */
@@ -104,7 +106,7 @@ li i:hover, li a:hover, .cardIcon i:hover, .bottomBar i:hover {  /* Combined hov
   top: 55px;
   left: .6rem;
   width: 95%;
-  height: 83.2%;
+  height: 79.2%;
   background:linear-gradient(rgba(230, 143, 12, 0.1), rgba(230, 143, 12, 0.4));
   color: rgb(241, 237, 237);
   padding: 1em;
@@ -204,4 +206,28 @@ li i:hover, li a:hover, .cardIcon i:hover, .bottomBar i:hover {  /* Combined hov
   1px -1px 0 #000000,
   -1px 1px 0 #000000,
   1px 1px 0 #000000;
+}
+
+.recipe-list{
+  display: none;
+  position: absolute;
+  top:50px;
+  right: 20px;
+  width: 12em;
+  z-index: 100;
+  padding: 5px;
+  flex-direction: column;
+  background-color: rgba(230, 143, 12, 0.7);
+  border-radius: 25px;
+  color: rgb(255, 255, 255);
+  text-shadow:
+  -1px -1px 0 #000000;
+}
+
+.recipe-list-item {
+  text-decoration: none;
+  cursor: pointer;
+  padding: 5px;
+  list-style: none;
+  background-color: transparent;
 }
