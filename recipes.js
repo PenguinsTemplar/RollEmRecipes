@@ -86,7 +86,7 @@ let recipes = [
         title : 'Instant Pot Tater Tot Casserole',
         imageSrc:    'Assets\/TaterTotCasserole.png',
         description : 'Hearty American Comfort Food',
-        ingredients : [{amount: '1 lb', ingredient: 'extra lean or lean ground beef or ground turkey',
+        ingredients : [{amount: '1 lb', ingredient: 'extra lean or lean ground beef or ground turkey'},
         {amount: '1 cup',ingredient:'diced onion'},
         {amount: '1/2 tsp',ingredient:'garlic powder'},
         {amount:  '1/4 tsp',ingredient:'salt'},
