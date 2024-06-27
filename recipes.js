@@ -81,15 +81,27 @@ let recipes = [
         instructions: 'put everything together in a mixer and mix for 5 minutes on medium speed.  let rise for 2 hours.  shape into a loaf and let rise for another hour.  bake at 450 for 30 minutes',
         category:'Side'
     },
-    // {
-    //     id: '003',
-    //     title : 'Instant Pot Tater Tot Casserole',
-    //     imageSrc:    'Assets\/TaterTotCasserole.png',
-    //     description : 'Hearty American Comfort Food',
-    //     ingredients : '1 pound extra lean or lean ground beef or ground turkey 1 cup diced onion half tsp garlic powder quarter tsp salt        quarter tsp pepper        1 tsp Worcesteshire        three quarters cup beef or chicken broth        1 12 oz bag frozen cut green beans        1 14 oz can corn drained or Frozen        1 10 oz can cream of mushroom soup        1/4 cup sour cream       16 oz frozen tater tots half cups grated cheddar cheese',
-    //     instructions: 'brown beef, toss everything on top, cook',
-    //     category:'Entree'
-    // },
+    {
+        id: '003',
+        title : 'Instant Pot Tater Tot Casserole',
+        imageSrc:    'Assets\/TaterTotCasserole.png',
+        description : 'Hearty American Comfort Food',
+        ingredients : [{amount: '1 lb', ingredient: 'extra lean or lean ground beef or ground turkey',
+        {amount: '1 cup',ingredient:'diced onion'},
+        {amount: '1/2 tsp',ingredient:'garlic powder'},
+        {amount:  '1/4 tsp',ingredient:'salt'},
+        {amount: '1/4 tsp',ingredient:'black pepper'},
+        {amount: '1 tsp',ingredient:'Worcesteshire'},
+        {amount: 'three quarters',ingredient:'cup beef or chicken broth'},
+        {amount: '1 12 oz', ingredient:' bag frozen cut green beans'},
+        {amount: '1 14 oz', ingredient:' can corn drained or Frozen'},
+        {amount: '1 10 oz', ingredient:' can cream of mushroom soup'},
+        {amount: '1/4 cup', ingredient:' sour cream'},
+        {amount: '16 oz', ingredient:' frozen tater tots half cups grated cheddar cheese'}
+    ],
+        instructions: 'brown beef, toss everything on top, cook',
+        category:'Entree'
+    },
     {
         id: '004',
         title : 'Grilled Avacado Carrots',
