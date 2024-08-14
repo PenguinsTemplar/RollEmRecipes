@@ -3,9 +3,51 @@
 // Further, it has a randomRecipe function that shuffles the cards based on the category of the recipie object.  The shuffle is constrained by the category of the recipie object.
 // there's also a category function that determines which card the recipie goes on, nominally the Entrer is index 0, 
 // the Side is index 1, and the Vegetable is index 2.
-Data and Constraints
-const categories = ['Entree', 'Side', 'Vegetable']
 
+// ***Global Variables?***
+// categprires to determine where the recipe goes
+const categories = ['Entree', 'Side', 'Vegetable']
+// this const is targeting the cardContainer div to allow for the creation of the cards.
+const cardContainer = document.querySelector('.cardContainer');
+
+// ***Card Creation and Initilization: primary goal***
+
+// Onload to create the cards.  seems to be able to opperate outside of top to  bottom processing, which must mean
+// that onload happens after the code is loaded.
+window.onload = function(){
+  createCard(mainDish);
+}
+// the onload function is used to load the cards when the page is loaded, in this case, the mainDish array is loaded to 3
+// cards for three seperate categories of recipies: Entree, Side, and Vegetable.
+
+function createCard(recipeList){
+  for(let i =0; i < recipeList.length; i++){
+      const newCard = document.createElement('div');
+      newCard.classList.add('card');
+      var item = recipeList[i].title
+      newCard.innerHTML = `
+      <h2 id="cardTitle1">${recipeList[i].title}</h2>
+      <img src="${recipeList[i].imageSrc}" alt="Recipe Image 1">
+      <p class="textInformation showText ingredients">${recipeList[i].ingredients.map(ingredient => `${ingredient.amount} : ${ingredient.ingredient}<br>`).join('')}
+      </p>
+      <div class="bottomBar">
+        <i class="material-symbols-outlined ingredients" onclick="showRecipeSection('ingredients', ${i})">Checklist</i>
+        <i class="material-symbols-outlined instructions" onclick="showRecipeSection('instructions', ${i})">Turn_Right</i>
+        <i class="material-symbols-outlined servinginfo" onclick="showRecipeSection('servingInfo', ${i})">Timer</i>
+      </div>
+      <div class="cardIcon">
+        <i class="rollCard material-symbols-outlined" onclick="randomRecipe('${item}', ${i})">deployed_code</i>
+        <i class="lockCard material-symbols-outlined" onclick="lockCard(${i}, recipes)">Lock</i>
+        <i class="loveCard material-symbols-outlined" onclick="favRecipe(${i}, recipes)">Favorite</i>
+      </div>
+      `;
+      cardContainer.appendChild(newCard);
+  }
+}
+
+
+// ***Utility Funnctions: Related Functions***
+// Show or hide recipe based on icon clicked
 function showRecipeSection(sectionName, index, recipe = mainDish) {
   const displayChange = document.querySelector('.cardContainer').children[index].querySelector('.textInformation');
   const sections = ['ingredients', 'instructions', 'servingInfo'];
@@ -40,58 +82,10 @@ function showRecipeSection(sectionName, index, recipe = mainDish) {
     displayChange.classList.add('showText');
   }
 }
-// this const is targeting the cardContainer div to allow for the creation of the cards.
-const cardContainer = document.querySelector('.cardContainer');
-
-function createCard(recipeList){
-    for(let i =0; i < recipeList.length; i++){
-        const newCard = document.createElement('div');
-        newCard.classList.add('card');
-        var item = recipeList[i].title
-        newCard.innerHTML = `
-        <h2 id="cardTitle1">${recipeList[i].title}</h2>
-        <img src="${recipeList[i].imageSrc}" alt="Recipe Image 1">
-        <p class="textInformation showText ingredients">${recipeList[i].ingredients.map(ingredient => `${ingredient.amount} : ${ingredient.ingredient}<br>`).join('')}
-        </p>
-        <div class="bottomBar">
-          <i class="material-symbols-outlined ingredients" onclick="showRecipeSection('ingredients', ${i})">Checklist</i>
-          <i class="material-symbols-outlined instructions" onclick="showRecipeSection('instructions', ${i})">Turn_Right</i>
-          <i class="material-symbols-outlined servinginfo" onclick="showRecipeSection('servingInfo', ${i})">Timer</i>
-        </div>
-        <div class="cardIcon">
-          <i class="rollCard material-symbols-outlined" onclick="randomRecipe('${item}', ${i})">deployed_code</i>
-          <i class="lockCard material-symbols-outlined" onclick="lockCard(${i}, recipes)">Lock</i>
-          <i class="loveCard material-symbols-outlined" onclick="favRecipe(${i}, recipes)">Favorite</i>
-        </div>
-        `;
-        cardContainer.appendChild(newCard);
-    }
-}
-// the onload function is used to load the cards when the page is loaded, in this case, the mainDish array is loaded to 3
-// cards for three seperate categories of recipies: Entree, Side, and Vegetable.
-window.onload = function(){
-    createCard(mainDish);
-}
-
-
-// this function is used to lock the the content from the recipie object with the specific button on the card
-// it looks to the index of the card and toggles the locked class on the card.
-const lockCard = (index) => {
-    const currentCard = cardContainer.children[index];
-    currentCard.classList.toggle('locked');
-}
-
-// this function is used to favorite the the content from the recipie object with the specific button on the card
-const favRecipe = (index) => {
-    const currentCard = cardContainer.children[index];
-    currentCard.classList.toggle('favorited');
-
-}
-
-
 // this function is used to shuffle the cards when the shuffle button is clicked, constrained by their category
 // which is determined by the title of the card.  This in turn comes from the mainDish array.  long term we probably
-// need to use index, or a more explicit ID to determine the category.
+// need to use index, or a more explicit ID to determine the category. This should probably be considered primary functionality
+// for the app.
 const randomRecipe = (item, index) => {
   let newShuffleArr = []; //new array for the selected type.
 
@@ -125,3 +119,15 @@ const randomRecipe = (item, index) => {
   `;
 };
 
+// this function is used to lock the the content from the recipie object with the specific button on the card
+// it looks to the index of the card and toggles the locked class on the card.
+const lockCard = (index) => {
+  const currentCard = cardContainer.children[index];
+  currentCard.classList.toggle('locked');
+}
+
+// this function is used to favorite the the content from the recipie object with the specific button on the card
+const favRecipe = (index) => {
+  const currentCard = cardContainer.children[index];
+  currentCard.classList.toggle('favorited');
+}

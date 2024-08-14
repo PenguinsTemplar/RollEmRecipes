@@ -17,7 +17,6 @@ search.addEventListener('keyup', (e) => {
     
     const listContainer = document.createElement('ul');
     
-   
     
     for(let i = 0; i < newRecipes.length; i++){
         console.log(newRecipes.length)
