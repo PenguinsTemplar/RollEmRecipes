@@ -1,0 +1,6 @@
+Objects
+    * Constructors
+        *"New" is a Constructors
+        *
+    * Prototype-Based Inheritance
+    * Shared Properties

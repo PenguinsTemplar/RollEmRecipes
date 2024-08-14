@@ -1,9 +1,11 @@
-//this file is intended to generate the HTML elements for the cards that will be displayed on the main page.  it should iterate through the recipe.js
-//file to get the text and images for each recipe.  it should also include the event listeners for the icons on the bottom bar of each card.
-//the ingredients are a nested object in the recipe object.  they have to be handled differently than the other sections.
-//poking this to see about synching it.
+// This code is for generating a card in the app, with the intent of displaying content from a recipie object from 
+// the recipie.js file.  The recipie object is an array of objects, each object contains a title, image, ingredients, instructions, and servingInfo.
+// Further, it has a randomRecipe function that shuffles the cards based on the category of the recipie object.  The shuffle is constrained by the category of the recipie object.
+// there's also a category function that determines which card the recipie goes on, nominally the Entrer is index 0, 
+// the Side is index 1, and the Vegetable is index 2.
+Data and Constraints
 const categories = ['Entree', 'Side', 'Vegetable']
-// ******* I think setting the recipe to mainDish is a mistake, it needs to be the mainDish onload, after that it should all be recipes. can this be an or?*******
+
 function showRecipeSection(sectionName, index, recipe = mainDish) {
   const displayChange = document.querySelector('.cardContainer').children[index].querySelector('.textInformation');
   const sections = ['ingredients', 'instructions', 'servingInfo'];
@@ -29,6 +31,7 @@ function showRecipeSection(sectionName, index, recipe = mainDish) {
   }
   
   else{
+    //in this section, I am trying to display the instructions and servingInfo sections.
     console.log(`sectionName: ${sectionName}, index: ${index}`)
     console.log(`displayChange: ${displayChange}.dataset.currentSection: ${displayChange.dataset.currentSection}`)
     displayChange.classList.remove(...sections.filter(section => section !== sectionName));
@@ -37,7 +40,7 @@ function showRecipeSection(sectionName, index, recipe = mainDish) {
     displayChange.classList.add('showText');
   }
 }
-
+// this const is targeting the cardContainer div to allow for the creation of the cards.
 const cardContainer = document.querySelector('.cardContainer');
 
 function createCard(recipeList){
@@ -64,18 +67,21 @@ function createCard(recipeList){
         cardContainer.appendChild(newCard);
     }
 }
-
+// the onload function is used to load the cards when the page is loaded, in this case, the mainDish array is loaded to 3
+// cards for three seperate categories of recipies: Entree, Side, and Vegetable.
 window.onload = function(){
     createCard(mainDish);
 }
 
 
-
+// this function is used to lock the the content from the recipie object with the specific button on the card
+// it looks to the index of the card and toggles the locked class on the card.
 const lockCard = (index) => {
     const currentCard = cardContainer.children[index];
     currentCard.classList.toggle('locked');
 }
 
+// this function is used to favorite the the content from the recipie object with the specific button on the card
 const favRecipe = (index) => {
     const currentCard = cardContainer.children[index];
     currentCard.classList.toggle('favorited');
@@ -83,7 +89,9 @@ const favRecipe = (index) => {
 }
 
 
-
+// this function is used to shuffle the cards when the shuffle button is clicked, constrained by their category
+// which is determined by the title of the card.  This in turn comes from the mainDish array.  long term we probably
+// need to use index, or a more explicit ID to determine the category.
 const randomRecipe = (item, index) => {
   let newShuffleArr = []; //new array for the selected type.
 
