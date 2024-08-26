@@ -2,20 +2,26 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
+
 		<meta
 			name="viewport"
 			content="width=device-width, initial-scale=1.0" />
+
 		<link
 			rel="stylesheet"
 			href="connect4_0.css" />
+		<!-- need a base tag to ensure it works on github https://github.com/PenguinsTemplar/RollEmRecipes
+		 and so it will still work locally-->
+		<base href="https://penguinstemplar.github.io/RollEmRecipes/Connect4/" />
+
 		<title>Connect 4!</title>
 	</head>
 
 	<body class="body">
 		<h1>Connect 4!</h1>
-		<button id="start-game">Start!</button>
+		<button id="start-game">Start!</button>  
 		<div id="game-board"></div>
-		<!-- <script src='app.js'></script> need to make sure thie src is case sensitive lower case for git -->
-		<script src="/RollEmRecipes/Connect4/connect4_1.js"></script>
+
+		<script src="connect4_1.js"></script>
 	</body>
 </html>
