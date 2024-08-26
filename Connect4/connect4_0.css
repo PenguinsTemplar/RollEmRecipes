@@ -3,7 +3,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background-color: rgb(3, 36, 133);
+	background-color: rgb(9, 25, 72);
 }
 
 #game-board {
@@ -23,16 +23,25 @@ body {
 	border: solid rgb(154, 77, 9);
 }
 h1 {
+	font-size: 2em;
 	color: rgb(195, 70, 8);
 	text-shadow: 2px 2px 4px #9c0909;
-	height: 8vh;
+	height: 4vh;
 }
 #start-game {
-	width: 25vw;
-	height: 8vh;
+	font-size: 1.5em;
+	color: #000000;
+	text-shadow: 1px 1px 2px #bd4e09;
+	width: 15vw;
+	height: 5vh;
 	margin: 2vh;
-	/* i want a teal to peach gradient for the background */
-	background: linear-gradient(to right, #6180d5, #ec7587);
+	/* i want a teal to peach gradient for the background where 20% of either side is the base color*/
+	background: linear-gradient(
+		to right,
+		rgb(71, 228, 228) 20%,
+		rgb(230, 78, 8) 80%
+	);
+	background: ;
 }
 /* I want the cells to fit in the game baord with space between the edges of the board */
 .cell {
@@ -66,13 +75,20 @@ h1 {
 	}
 }
 @media (min-width: 901px) and (max-width: 2048px) {
+	h1 {
+		height: 3vh;
+	}
+	#start-game {
+		font-size: 0.9em;
+		height: 3vh;
+	}
 	#game-board {
-		width: 80vw; /* Adjust width as needed for 2K screens */
-		height: 60vw; /* Adjust height as needed for 2K screens */
+		width: 60vw; /* Adjust width as needed for 2K screens */
+		height: 38vw; /* Adjust height as needed for 2K screens */
 	}
 
 	.cell {
-		height: 9vw; /* Adjust cell size as needed for 2K screens */
-		width: 9vw;
+		height: 5.5vw; /* Adjust cell size as needed for 2K screens */
+		width: 5.5vw;
 	}
 }
