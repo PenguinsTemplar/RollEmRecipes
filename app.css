@@ -251,3 +251,26 @@ li i:hover, li a:hover, .cardIcon i:hover, .bottomBar i:hover {  /* Combined hov
   height: 50px;
 
 }
+
+/* Media Queries */
+@media screen and (max-width: 550px) {
+  .cardContainer {
+    flex-direction: column;
+    padding: 10px 10px 10px 10px;
+  }
+  .card {
+    margin: 10px 0 10px 0;
+  }
+  .textInformation {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .recipe-list {
+    right: 0;
+  }
+  #weather {
+    right: 0;
+  }
+}

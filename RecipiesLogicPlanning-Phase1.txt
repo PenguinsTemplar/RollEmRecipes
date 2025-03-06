@@ -1,0 +1,22 @@
+Start top left, work right
+row one 
+   Nav
+	Menu Burger
+	Title (Larger, more luminous)
+	Temp
+	Search (auto completes on recipie search, click sends it to section card)
+Row 2
+   Card x 3 (stretch, modular, scales out?  Think about coverage, I think the fit is too lose?
+	Image in Back
+		(Card needs a catergory Labels)
+	Title center top (I like it, needs to match ratios better compared to top title
+	Transperant Text Overlay
+	Button Bar (part of card or central control with click?
+		Buttons for Overalay - Hidden default to show Image.
+			Ingredients (toggle hide show)
+			Directions (toggle hide show)
+			Serving and Nutrition (toggle hide show)
+		Buttons for Recipie Interactions
+			Shuffle - retrieves by category
+			Lock - Prevents Shuffle
+			Heart - adds to favorites (shuffle from favorites?)
