@@ -1,5 +1,3 @@
-// first section is for the initial dispaly.  Will be overritten by the lock button
-// by placing the values locally, so what they had locked is there when they come back.
 let mainDish = [
 	{
 		id: '001',
