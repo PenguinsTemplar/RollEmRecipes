@@ -1,276 +1,255 @@
 /* Global styles */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
-  background-image: url("assets/honey-rose-lavendar-icecream.jpg");
-  background-color: #f0edb5;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: left;  
+	background-image: url('assets/honey-rose-lavendar-icecream.jpg');
+	background-size: cover;
+	background-color: #f0edb5;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: left;
 }
 
-.container{ 
-  box-shadow: 3px 3px 5px 0px rgba(68, 1, 1, 0.4);
-  height: 100vh;
-  display:flex;
-  flex-direction: column;;
-  position: relative;
+.container {
+	box-shadow: 3px 3px 5px 0px rgba(68, 1, 1, 0.4);
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	position: relative;
 }
 
-.topBar{
-  text-align: center;
-  color: rgb(5, 156, 243);
-  background-color: rgba(230, 143, 12, 0.5);
-  backdrop-filter: blur(5px);
-  box-shadow: 3px 3px 5px 0px rgba(68, 1, 1, 0.5);
-  padding: .75em;
-  text-shadow: 5px 5px 5px rgba(68, 1, 1, 0.5);
-  display: flex;
-  flex-direction: row;
-  list-style-type: none;
-  justify-content: space-between;
-  text-shadow:
-  -1px -1px 0 #000,
-  1px -1px 0 #000,
-  -1px 1px 0 #000,
-  1px 1px 0 #000;
+.topBar {
+	text-align: center;
+	color: rgb(5, 156, 243);
+	background-color: rgba(230, 143, 12, 0.5);
+	backdrop-filter: blur(1px);
+	box-shadow: 3px 3px 5px 0px rgba(68, 1, 1, 0.5);
+	padding: 0.75em;
+	text-shadow: 5px 5px 5px rgba(68, 1, 1, 0.5);
+	display: flex;
+	flex-direction: row;
+	list-style-type: none;
+	justify-content: space-between;
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+		1px 1px 0 #000;
 }
 
-#searchInput{
-  height: 30px;
-  border-radius: 25px;
-
+#searchInput {
+	height: 30px;
+	border-radius: 25px;
 }
 
-li a{
-  text-decoration: none;
+li a {
+	text-decoration: none;
 }
 
-li i:hover, li a:hover, .cardIcon i:hover, .bottomBar i:hover {  /* Combined hover selector .  I think I still want labels in desktop style */
-  background-color: rgba(209, 37, 24, 0.5);
-  color: black;
-  transform: scale(1.3);
-  transition: 0.5s;
+li i:hover,
+li a:hover,
+.cardIcon i:hover,
+.bottomBar i:hover {
+	/* Combined hover selector .  I think I still want labels in desktop style */
+	background-color: rgba(209, 37, 24, 0.5);
+	color: black;
+	transform: scale(1.3);
+	transition: 0.5s;
 }
-
 
 .cardContainer {
-  display: flex;
-  position: relative; /* Allows absolute positioning for text overlay */
-  width: 100%; /* Fills horizontal space */
-  height: calc(100vh - 50px); /* Adjust height based on topBar height */
-  background-color: #f0edb5; /* Optional background for visibility */
-  padding: 10px 50px 50px 50px; /* Optional padding for visibility */  justify-content: space-between;
+	display: flex;
+	position: relative;
+	width: 100%; /* Fills horizontal space */
+	height: calc(100vh - 50px);
+	background-color: #f0edb5;
+	overflow: auto; /* Allows scrolling */
+	justify-content: space-between;
 }
-.card{
-  display: flex;
-  flex-direction: column;
-  min-width: 15rem;
-  max-width: 25rem;
-  border-radius: 25px;
-  background-color: rgba(230, 143, 12, 0.5);
-  backdrop-filter: blur(10px);
-  box-shadow: 3px 3px 5px 0px rgba(68, 1, 1, 0.5);
-  position: relative;
-  align-items: center;
+.card {
+	display: flex;
+	flex-direction: column;
+	min-width: 15rem;
+	max-width: 25rem;
+	border-radius: 25px;
+	background-color: rgba(230, 143, 12, 0.5);
+	backdrop-filter: blur(10px);
+	box-shadow: 3px 3px 5px 0px rgba(68, 1, 1, 0.5);
+	position: relative;
+	align-items: center;
+	margin: 1rem;
 }
 
-.card h2{
-  position: absolute;
-  text-align: center;
-  font-size: 1.5em;
-  margin: 0.5em;
-  color: rgb(0, 0, 0);
-  text-shadow:
-  -1px -1px 0 #e4c5c5,
-  1px -1px 0 #e4c5c5,
-  -1px 1px 0 #e4c5c5,
-  1px 1px 0 #e4c5c5;
+.card h2 {
+	position: absolute;
+	text-align: center;
+	font-size: 1.5em;
+	margin: 0.5em;
+	color: rgb(0, 0, 0);
+	text-shadow: -1px -1px 0 #e4c5c5, 1px -1px 0 #e4c5c5, -1px 1px 0 #e4c5c5,
+		1px 1px 0 #e4c5c5;
 }
 .cardContainer img {
-  width: 100%; /* Fills s width */
-  height: 100%; /* Fills container height */
-  object-fit:cover; /* Scales image to fill container */
-  border-radius: 25px;
-  border: 1px solid #ddd; /* Optional border for visibility */
-  }
-
-.textInformation{
-  display: none;
-  position: absolute;
-  font-size: 1.5rem;
-  top: 55px;
-  left: .6rem;
-  width: 95%;
-  height: 79.2%;
-  background:linear-gradient(rgba(230, 143, 12, 0.1), rgba(230, 143, 12, 0.4));
-  color: rgb(241, 237, 237);
-  padding: 1em;
-  text-shadow:
-  -1px -1px 0 #040404,
-  1px -1px 0 #836464,
-  -1px 1px 0 #0c0c0c,
-  1px 1px 0 #000000;
-  border-radius: 25px;
+	width: 100%; /* Fills s width */
+	height: 100%; /* Fills container height */
+	object-fit: cover; /* Scales image to fill container */
+	border-radius: 25px;
+	border: 1px solid #ddd; /* Optional border for visibility */
 }
 
-
-.showText{
-  display: block;
-  transition:cubic-bezier(0.445, 0.05, 0.55, 0.95) 1s;
-  animation: opacity .5s;
+.textInformation {
+	display: none;
+	position: absolute;
+	font-size: 1.5rem;
+	width: 90%;
+	height: 85%;
+	background: linear-gradient(rgba(230, 143, 12, 0.1), rgba(230, 143, 12, 0.4));
+	color: rgb(241, 237, 237);
+	padding: 2em;
+	text-shadow: -1px -1px 0 #040404, 1px -1px 0 #836464, -1px 1px 0 #0c0c0c,
+		1px 1px 0 #000000;
+	border-radius: 25px;
 }
 
-
-
-@keyframes opacity{
-  0%{
-    opacity: 0;
-  }
-  25%{
-    opacity: 0.2;
-  }
-  50%{
-    opacity: 0.4;
-  }
-  75%{
-    opacity: 0.6;
-  }
-  100%{
-    opacity: 0.8;
-  }
+.showText {
+	display: block;
+	transition: cubic-bezier(0.445, 0.05, 0.55, 0.95) 1s;
+	animation: opacity 0.5s;
 }
 
-@keyframes opacity-out{
-  0%{
-    opacity: 0.8;
-  }
-  25%{
-    opacity: 0.6;
-  }
-  50%{
-    opacity: 0.4;
-  }
-  75%{
-    opacity: 0.2;
-  }
-  100%{
-    opacity: 0;
-  }
+@keyframes opacity {
+	0% {
+		opacity: 0;
+	}
+	25% {
+		opacity: 0.2;
+	}
+	50% {
+		opacity: 0.4;
+	}
+	75% {
+		opacity: 0.6;
+	}
+	100% {
+		opacity: 0.8;
+	}
+}
+
+@keyframes opacity-out {
+	0% {
+		opacity: 0.8;
+	}
+	25% {
+		opacity: 0.6;
+	}
+	50% {
+		opacity: 0.4;
+	}
+	75% {
+		opacity: 0.2;
+	}
+	100% {
+		opacity: 0;
+	}
 }
 
 /* This section shows the hovered card with a blue underline under the text */
-.card h2::after{
-  content: "";
-  position: absolute;
-  height: 3px;
-  background-color: rgb(117, 201, 251);
-  width: 109%;
-  height: 3px;
-  left: 0;
-  bottom:0;
-  transform: scaleX(0);
-
+.card h2::after {
+	content: '';
+	position: absolute;
+	height: 3px;
+	background-color: rgb(117, 201, 251);
+	width: 109%;
+	height: 3px;
+	left: 0;
+	bottom: 0;
+	transform: scaleX(0);
 }
 
-.card:hover h2::after{
-  transform: scaleX(1);
-
+.card:hover h2::after {
+	transform: scaleX(1);
 }
-
 
 /* These are the icons to attach the functions on the bottomBar and the cardIcon */
-.bottomBar i{
-  padding: .5em .5em .5em .5em;
-  cursor: pointer;
-  text-decoration: none;
-  color:rgb(230, 157, 176);
-  text-shadow:
-  -1px -1px 0 #000000,
-  1px -1px 0 #000000,
-  -1px 1px 0 #000000,
-  1px 1px 0 #000000;  
-
+.bottomBar i {
+	padding: 0.5em 0.5em 0.5em 0.5em;
+	cursor: pointer;
+	text-decoration: none;
+	color: rgb(237, 213, 162);
+	text-shadow: -1px -1px #560202, 1px -1px 0 #5e0707, -1px 1px 0 #440303,
+		1px 1px 0 #000000;
 }
-.cardIcon i{
-  padding: .5em .5em .5em .5em;
-  cursor:pointer;
-  text-decoration: none;
-  color:rgb(117, 201, 251);
-  text-shadow:
-  -1px -1px 0 #000000,
-  1px -1px 0 #000000,
-  -1px 1px 0 #000000,
-  1px 1px 0 #000000;
+.cardIcon i {
+	padding: 0.5em 0.5em 0.5em 0.5em;
+	cursor: pointer;
+	text-decoration: none;
+	color: rgb(117, 201, 251);
+	text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000,
+		1px 1px 0 #000000;
 }
 
-.recipe-list{
-  display: none;
-  position: absolute;
-  top:50px;
-  right: 20px;
-  width: 12em;
-  z-index: 100;
-  padding: 5px;
-  flex-direction: column;
-  background-color: rgba(230, 143, 12, 0.7);
-  border-radius: 25px;
-  color: rgb(255, 255, 255);
-  text-shadow:
-  -1px -1px 0 #000000;
+.recipe-list {
+	display: none;
+	position: absolute;
+	top: 50px;
+	right: 20px;
+	width: 12em;
+	z-index: 100;
+	padding: 5px;
+	flex-direction: column;
+	background-color: rgba(230, 143, 12, 0.7);
+	border-radius: 25px;
+	color: rgb(255, 255, 255);
+	text-shadow: -1px -1px 0 #000000;
 }
 
 .recipe-list-item {
-  text-decoration: none;
-  cursor: pointer;
-  padding: 5px;
-  list-style: none;
-  background-color: transparent;
+	text-decoration: none;
+	cursor: pointer;
+	padding: 5px;
+	list-style: none;
+	background-color: transparent;
 }
 
 #weather {
-  position: absolute;
-  display: flex ;
-  top: 10px;
-  right: 500px;
-  z-index: 99999;
-  align-items: center ;
-  justify-content: center ;
+	position: absolute;
+	display: flex;
+	top: 10px;
+	right: 500px;
+	z-index: 99999;
+	align-items: center;
+	justify-content: center;
 }
 
 #weather p {
- font-weight: bolder;
+	font-weight: bolder;
 }
 
 #weather img {
-  width: 50px;
-  height: 50px;
-
+	width: 50px;
+	height: 50px;
 }
 
 /* Media Queries */
 @media screen and (max-width: 550px) {
-  .cardContainer {
-    flex-direction: column;
-    padding: 10px 10px 10px 10px;
-  }
-  .card {
-    margin: 10px 0 10px 0;
-  }
-  .textInformation {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-  .recipe-list {
-    right: 0;
-  }
-  #weather {
-    right: 0;
-  }
+	.cardContainer {
+		flex-direction: column;
+		padding: 10px 10px 10px 10px;
+	}
+	.card {
+		margin: 10px 0 10px 0;
+	}
+	.textInformation {
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+	.recipe-list {
+		right: 0;
+	}
+	#weather {
+		right: 0;
+	}
 }

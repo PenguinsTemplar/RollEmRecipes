@@ -1,24 +1,11 @@
-// This code is for generating a card in the app, with the intent of displaying content from a recipie object from 
-// the recipie.js file.  The recipie object is an array of objects, each object contains a title, image, ingredients, instructions, and servingInfo.
-// Further, it has a randomRecipe function that shuffles the cards based on the category of the recipie object.  The shuffle is constrained by the category of the recipie object.
-// there's also a category function that determines which card the recipie goes on, nominally the Entrer is index 0, 
-// the Side is index 1, and the Vegetable is index 2.
 
-// ***Global Variables?***
-// categprires to determine where the recipe goes
 const categories = ['Entree', 'Side', 'Vegetable']
-// this const is targeting the cardContainer div to allow for the creation of the cards.
+
 const cardContainer = document.querySelector('.cardContainer');
 
-// ***Card Creation and Initilization: primary goal***
-
-// Onload to create the cards.  seems to be able to opperate outside of top to  bottom processing, which must mean
-// that onload happens after the code is loaded.
 window.onload = function(){
   createCard(mainDish);
 }
-// the onload function is used to load the cards when the page is loaded, in this case, the mainDish array is loaded to 3
-// cards for three seperate categories of recipies: Entree, Side, and Vegetable.
 
 function createCard(recipeList){
   for(let i =0; i < recipeList.length; i++){
@@ -45,25 +32,22 @@ function createCard(recipeList){
   }
 }
 
-
-// ***Utility Funnctions: Related Functions***
-// Show or hide recipe based on icon clicked
 function showRecipeSection(sectionName, index, recipe = mainDish) {
   const displayChange = document.querySelector('.cardContainer').children[index].querySelector('.textInformation');
   const sections = ['ingredients', 'instructions', 'servingInfo'];
   
   const isCurrentlyVisible = displayChange.classList.contains('showText');
-  // Update content based on visibility
+
   
   if (sectionName === displayChange.dataset.currentSection && isCurrentlyVisible) {
-    // if its the same section and already visibile, hide it.
+
     console.log(`isCurrentlyVisible: ${isCurrentlyVisible}`)
     console.log(`sectionName: ${sectionName}, index: ${index}`)
     displayChange.classList.toggle('showText');
   }
-  // if it's the igredients button, it needs to itterate through the nexted ingredients object.  
+
   else if (sectionName === 'ingredients') {
-    // Handle ingredients section specifically
+
     console.log(`sectionName: ${sectionName}, index: ${index}`)
     console.log(`else if ${displayChange.classList}`)
     displayChange.innerHTML = recipe[index].ingredients.map(ingredient => `${ingredient.amount} : ${ingredient.ingredient}<br>`).join('');
@@ -73,7 +57,7 @@ function showRecipeSection(sectionName, index, recipe = mainDish) {
   }
   
   else{
-    //in this section, I am trying to display the instructions and servingInfo sections.
+
     console.log(`sectionName: ${sectionName}, index: ${index}`)
     console.log(`displayChange: ${displayChange}.dataset.currentSection: ${displayChange.dataset.currentSection}`)
     displayChange.classList.remove(...sections.filter(section => section !== sectionName));
@@ -82,24 +66,18 @@ function showRecipeSection(sectionName, index, recipe = mainDish) {
     displayChange.classList.add('showText');
   }
 }
-// this function is used to shuffle the cards when the shuffle button is clicked, constrained by their category
-// which is determined by the title of the card.  This in turn comes from the mainDish array.  long term we probably
-// need to use index, or a more explicit ID to determine the category. This should probably be considered primary functionality
-// for the app.
+
 const randomRecipe = (item, index) => {
-  let newShuffleArr = []; //new array for the selected type.
+  let newShuffleArr = [];
 
   const currentCard = recipes.find(recipe => recipe.title === item);
-  const newCategory =  currentCard.category;// Use const for element selection
+  const newCategory =  currentCard.category;
   console.log("currentItems", currentCard)
   console.log("newCategory", newCategory)
 
   newShuffleArr = recipes.filter(recipe => recipe.category === recipes[index].category);
   console.log("newShuffleArr", newShuffleArr)
   newShuffleArr = newShuffleArr.sort(() => Math.random() - 0.5);
-  // console.log(newShuffleArr)
-  // console.log(newShuffleArr[0])
-  // currentCard.innerHTML = createCard(newShuffleArr[0]);
   const cardItems = document.querySelectorAll('.cardContainer .card');
   cardItems[index].innerHTML = `
   <h2 id="cardTitle1">${newShuffleArr[0].title}</h2>
@@ -119,14 +97,11 @@ const randomRecipe = (item, index) => {
   `;
 };
 
-// this function is used to lock the the content from the recipie object with the specific button on the card
-// it looks to the index of the card and toggles the locked class on the card.
 const lockCard = (index) => {
   const currentCard = cardContainer.children[index];
   currentCard.classList.toggle('locked');
 }
 
-// this function is used to favorite the the content from the recipie object with the specific button on the card
 const favRecipe = (index) => {
   const currentCard = cardContainer.children[index];
   currentCard.classList.toggle('favorited');
